@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Todo from './components/Todo'
 
-function App() {
+function App(props) {
+  const tasks = props.tasks.map(task => (
+    <Todo index={task.index} name={task.name} completed={task.completed}></Todo>
+  ))
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>To-do 리스트</h1>
       </header>
+      <section>
+        <input type="text" />
+        <button>To-do 추가</button>
+      </section>
+      <section className="todo_list">{tasks}</section>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
