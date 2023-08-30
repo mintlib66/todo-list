@@ -1,4 +1,5 @@
 import './App.css'
+import Form from './components/Form'
 import Todo from './components/Todo'
 
 function App(props) {
@@ -12,8 +13,7 @@ function App(props) {
         <h1>To-do 리스트</h1>
       </header>
       <section>
-        <input type="text" />
-        <button>To-do 추가</button>
+        <Form></Form>
       </section>
       <section className="todo_list">{tasks}</section>
     </div>
