@@ -2,7 +2,6 @@ import React from 'react'
 
 function Todo(props) {
   const { index, name, checked } = props
-  console.log(props)
   return (
     <li className="todo">
       <div>

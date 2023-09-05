@@ -46,3 +46,7 @@ section {
   padding: 1rem 1.5rem;
   border: 1px solid lightblue;
 }
+.todo input[type='checkbox']:checked + label {
+  color: lightgrey;
+  text-decoration: line-through;
+}

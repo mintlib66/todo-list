@@ -2,7 +2,7 @@ import React from 'react'
 import Todo from './Todo'
 
 function TodoList(props) {
-  const tasks = props.tasks.map(task => (
+  const todos = props.todos.map(task => (
     <Todo
       key={task.index}
       index={task.index}
@@ -12,7 +12,7 @@ function TodoList(props) {
     ></Todo>
   ))
 
-  return <section className="todo_list">{tasks}</section>
+  return <section className="todo_list">{todos}</section>
 }
 
 export default TodoList

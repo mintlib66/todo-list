@@ -32,7 +32,7 @@ function App(props) {
         <h1>To-do 리스트</h1>
       </header>
       <InputForm onInsert={onInsert}></InputForm>
-      <TodoList tasks={todos} onRemove={onRemove}></TodoList>
+      <TodoList todos={todos} onRemove={onRemove}></TodoList>
     </div>
   )
 }
