@@ -1,21 +1,32 @@
+import { useCallback, useRef, useState } from 'react'
 import './App.css'
-import Form from './components/Form'
-import Todo from './components/Todo'
+import InputForm from './components/InputForm'
+import TodoList from './components/TodoList'
 
 function App(props) {
-  const tasks = props.tasks.map(task => (
-    <Todo index={task.index} name={task.name} completed={task.completed}></Todo>
-  ))
+  const [todos, setTodos] = useState(props.tasks)
+
+  const nextId = useRef(3)
+  const onInsert = useCallback(
+    text => {
+      const todo = {
+        index: nextId.current,
+        name: text,
+        checked: false,
+      }
+      setTodos([...todos, todo])
+      nextId.current++
+    },
+    [todos]
+  )
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>To-do 리스트</h1>
       </header>
-      <section>
-        <Form></Form>
-      </section>
-      <section className="todo_list">{tasks}</section>
+      <InputForm onInsert={onInsert}></InputForm>
+      <TodoList tasks={todos}></TodoList>
     </div>
   )
 }

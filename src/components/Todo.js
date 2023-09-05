@@ -6,11 +6,11 @@ function Todo(props) {
       <div>
         <input
           type="checkbox"
-          name=""
           id={'todo_' + props.index}
+          name="todo_text"
           defaultChecked={props.completed}
         />
-        <label for={'todo_' + props.index}>{props.name}</label>
+        <label htmlFor={'todo_' + props.index}>{props.name}</label>
       </div>
       <div>
         <button className="btn_edit">수정</button>
