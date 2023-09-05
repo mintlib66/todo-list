@@ -19,6 +19,12 @@ function App(props) {
     },
     [todos]
   )
+  const onRemove = useCallback(
+    index => {
+      setTodos(todos.filter(todo => todo.index !== index))
+    },
+    [todos]
+  )
 
   return (
     <div className="App">
@@ -26,7 +32,7 @@ function App(props) {
         <h1>To-do 리스트</h1>
       </header>
       <InputForm onInsert={onInsert}></InputForm>
-      <TodoList tasks={todos}></TodoList>
+      <TodoList tasks={todos} onRemove={onRemove}></TodoList>
     </div>
   )
 }

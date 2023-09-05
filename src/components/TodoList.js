@@ -8,6 +8,7 @@ function TodoList(props) {
       index={task.index}
       name={task.name}
       completed={task.completed}
+      onRemove={props.onRemove}
     ></Todo>
   ))
 

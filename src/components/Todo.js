@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Todo(props) {
+  const { index, name, checked } = props
+  console.log(props)
   return (
     <li className="todo">
       <div>
@@ -14,7 +16,9 @@ function Todo(props) {
       </div>
       <div>
         <button className="btn_edit">수정</button>
-        <button className="btn_delete">삭제</button>
+        <button className="btn_delete" onClick={() => props.onRemove(index)}>
+          삭제
+        </button>
       </div>
     </li>
   )
